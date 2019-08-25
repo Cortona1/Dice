@@ -8,5 +8,6 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         UserInterface game = new UserInterface(reader);
 
+        game.Start();
     }
 }
