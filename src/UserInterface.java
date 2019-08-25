@@ -42,6 +42,45 @@ public class UserInterface {
     public void rollDice() {
         int round = 1;
 
+        System.out.println("Let the games begin\n");
 
+        while(true) {
+            System.out.print("Write \"roll\" to roll the dice otherwise type quit to end the game:  ");
+            String userInput = reader.nextLine();
+
+            if (!userInput.equals("roll")){
+                break;
+            } else {
+                pointOrder(round);
+                diceResults(round);
+                round++;
+
+            }
+
+
+
+        }
+
+    }
+
+    public void pointOrder(Integer round) {
+        int order = 1;
+        System.out.println("\nRound " + round + "\n" + "\nRoll order: " );
+
+        for (Player player : this.playerList) {
+            System.out.println("  " + order + ". " + player.diceResults());
+            player.playerRollsDice(round);
+            order++;
+        }
+        System.out.println("");
+
+    }
+
+    public void diceResults(Integer round) {
+        System.out.println("Results of round " + round);
+
+        for (Player player : this.playerList) {
+            System.out.println(player.getName() + "\n" + "  dice rolls: " + player.getDiceRoll(round).rolls());
+        }
     }
 }

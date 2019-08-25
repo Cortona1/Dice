@@ -27,4 +27,17 @@ public class Player {
         score.put(round, newRoll);
 
     }
+
+    public int addPoints() {
+        int helper = 0;
+
+        for (DiceRoll diceroll : this.score.values()) {
+            helper += diceroll.getPoints();
+        }
+        return helper;
+    }
+
+    public String diceResults() {
+        return this.name + " (" + addPoints() + " points)";
+    }
 }
