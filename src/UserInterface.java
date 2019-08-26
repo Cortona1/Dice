@@ -86,7 +86,14 @@ public class UserInterface {
     }
 
     public void gameResults(){
-        System.out.println("\nThanks for playing!\n" + "\nLeaderboard: \n" + "Rank     Name");
+        int helper = 1;
+        Collections.reverse(this.playerList);
+        System.out.println("\n********************************\n      Thanks for playing!\n" +
+                "********************************\n"+ "\nLeaderboard: \n" + "Rank     Name");
+        for (Player player : this.playerList) {
+            System.out.println( helper + ".  " + player.diceResults());
+            helper++;
+        }
 
         
 

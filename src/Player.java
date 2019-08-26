@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Player {
+public class Player implements Comparable<Player> {
 
     private String name;
     private Map<Integer, DiceRoll> score;
