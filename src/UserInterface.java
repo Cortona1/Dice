@@ -101,8 +101,8 @@ public class UserInterface {
 
     public void introduction() {
         System.out.println("\n********************************************************"
-                + "\n    Lets play a game of dice, the highest score wins\n" + "************************************" +
-                "********************"
+                + "\n\n    Lets play a game of dice, the highest score wins\n\n" + "************************************" +
+                "********************\n"
                 + "\nRolling higher numbers will give you"
                 + " more points and the player with the most points win\n");
     }
