@@ -40,4 +40,9 @@ public class Player {
     public String diceResults() {
         return this.name + " (" + addPoints() + " points)";
     }
+
+    @Override
+    public int compareTo(Player player) {
+        return addPoints() - player.addPoints();
+    }
 }

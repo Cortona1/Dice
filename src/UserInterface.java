@@ -1,4 +1,4 @@
-
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -13,11 +13,10 @@ public class UserInterface {
 
     }
     public void Start() {
-        System.out.println("\nLets play a game of dice, the highest score wins\n" + "\nRolling higher numbers will give you"
-                + " more points the player with the most points win\n");
+        introduction();
         askUser();
         rollDice();
-
+        gameResults();
 
     }
 
@@ -42,7 +41,7 @@ public class UserInterface {
     public void rollDice() {
         int round = 1;
 
-        System.out.println("Let the games begin\n");
+        System.out.println("Let the games begin! ^_^\n");
 
         while(true) {
             System.out.print("Write \"roll\" to roll the dice otherwise type quit to end the game:  ");
@@ -82,5 +81,22 @@ public class UserInterface {
         for (Player player : this.playerList) {
             System.out.println(player.getName() + "\n" + "  dice rolls: " + player.getDiceRoll(round).rolls());
         }
+        System.out.println("");
+        Collections.sort(this.playerList);
+    }
+
+    public void gameResults(){
+        System.out.println("\nThanks for playing!\n" + "\nLeaderboard: \n" + "Rank     Name");
+
+        
+
+    }
+
+    public void introduction() {
+        System.out.println("\n********************************************************"
+                + "\n    Lets play a game of dice, the highest score wins\n" + "************************************" +
+                "********************"
+                + "\nRolling higher numbers will give you"
+                + " more points and the player with the most points win\n");
     }
 }
